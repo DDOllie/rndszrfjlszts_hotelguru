@@ -1,0 +1,6 @@
+@NetpincerApp_HostAddress = http://localhost:5066
+
+GET {{NetpincerApp_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
