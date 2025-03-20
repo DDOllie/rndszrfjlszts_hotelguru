@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using NetpincerApp.DataContext.Context;
+using HotelGuru.DataContext.Context;
 
 #nullable disable
 
-namespace NetpincerApp.DataContext.Migrations
+namespace HotelGuru.DataContext.Migrations
 {
     [DbContext(typeof(AppDbContext))]
     [Migration("20250220095942_Initial")]
@@ -24,7 +24,7 @@ namespace NetpincerApp.DataContext.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("NetPincerApp.DataContext.Entities.Address", b =>
+            modelBuilder.Entity("HotelGuru.DataContext.Entities.Address", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -58,7 +58,7 @@ namespace NetpincerApp.DataContext.Migrations
                     b.ToTable("Addresses");
                 });
 
-            modelBuilder.Entity("NetPincerApp.DataContext.Entities.Food", b =>
+            modelBuilder.Entity("HotelGuru.DataContext.Entities.Food", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -92,7 +92,7 @@ namespace NetpincerApp.DataContext.Migrations
                     b.ToTable("Foods");
                 });
 
-            modelBuilder.Entity("NetPincerApp.DataContext.Entities.FoodCategory", b =>
+            modelBuilder.Entity("HotelGuru.DataContext.Entities.FoodCategory", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -109,7 +109,7 @@ namespace NetpincerApp.DataContext.Migrations
                     b.ToTable("FoodCategories");
                 });
 
-            modelBuilder.Entity("NetPincerApp.DataContext.Entities.Order", b =>
+            modelBuilder.Entity("HotelGuru.DataContext.Entities.Order", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -135,7 +135,7 @@ namespace NetpincerApp.DataContext.Migrations
                     b.ToTable("Orders");
                 });
 
-            modelBuilder.Entity("NetPincerApp.DataContext.Entities.OrderItem", b =>
+            modelBuilder.Entity("HotelGuru.DataContext.Entities.OrderItem", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -161,7 +161,7 @@ namespace NetpincerApp.DataContext.Migrations
                     b.ToTable("OrderItems");
                 });
 
-            modelBuilder.Entity("NetPincerApp.DataContext.Entities.Restaurant", b =>
+            modelBuilder.Entity("HotelGuru.DataContext.Entities.Restaurant", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -182,7 +182,7 @@ namespace NetpincerApp.DataContext.Migrations
                     b.ToTable("Restaurants");
                 });
 
-            modelBuilder.Entity("NetPincerApp.DataContext.Entities.Role", b =>
+            modelBuilder.Entity("HotelGuru.DataContext.Entities.Role", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -199,7 +199,7 @@ namespace NetpincerApp.DataContext.Migrations
                     b.ToTable("Roles");
                 });
 
-            modelBuilder.Entity("NetPincerApp.DataContext.Entities.User", b =>
+            modelBuilder.Entity("HotelGuru.DataContext.Entities.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -239,9 +239,9 @@ namespace NetpincerApp.DataContext.Migrations
                     b.ToTable("RoleUser");
                 });
 
-            modelBuilder.Entity("NetPincerApp.DataContext.Entities.Address", b =>
+            modelBuilder.Entity("HotelGuru.DataContext.Entities.Address", b =>
                 {
-                    b.HasOne("NetPincerApp.DataContext.Entities.User", "User")
+                    b.HasOne("HotelGuru.DataContext.Entities.User", "User")
                         .WithMany("Address")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -250,15 +250,15 @@ namespace NetpincerApp.DataContext.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("NetPincerApp.DataContext.Entities.Food", b =>
+            modelBuilder.Entity("HotelGuru.DataContext.Entities.Food", b =>
                 {
-                    b.HasOne("NetPincerApp.DataContext.Entities.FoodCategory", "Category")
+                    b.HasOne("HotelGuru.DataContext.Entities.FoodCategory", "Category")
                         .WithMany()
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("NetPincerApp.DataContext.Entities.Restaurant", "Restaurant")
+                    b.HasOne("HotelGuru.DataContext.Entities.Restaurant", "Restaurant")
                         .WithMany("MenuItems")
                         .HasForeignKey("RestaurantId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -269,9 +269,9 @@ namespace NetpincerApp.DataContext.Migrations
                     b.Navigation("Restaurant");
                 });
 
-            modelBuilder.Entity("NetPincerApp.DataContext.Entities.Order", b =>
+            modelBuilder.Entity("HotelGuru.DataContext.Entities.Order", b =>
                 {
-                    b.HasOne("NetPincerApp.DataContext.Entities.Address", "Address")
+                    b.HasOne("HotelGuru.DataContext.Entities.Address", "Address")
                         .WithMany()
                         .HasForeignKey("AddressId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -280,15 +280,15 @@ namespace NetpincerApp.DataContext.Migrations
                     b.Navigation("Address");
                 });
 
-            modelBuilder.Entity("NetPincerApp.DataContext.Entities.OrderItem", b =>
+            modelBuilder.Entity("HotelGuru.DataContext.Entities.OrderItem", b =>
                 {
-                    b.HasOne("NetPincerApp.DataContext.Entities.Food", "MenuItem")
+                    b.HasOne("HotelGuru.DataContext.Entities.Food", "MenuItem")
                         .WithMany()
                         .HasForeignKey("MenuItemId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("NetPincerApp.DataContext.Entities.Order", "Order")
+                    b.HasOne("HotelGuru.DataContext.Entities.Order", "Order")
                         .WithMany("OrderItems")
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -301,30 +301,30 @@ namespace NetpincerApp.DataContext.Migrations
 
             modelBuilder.Entity("RoleUser", b =>
                 {
-                    b.HasOne("NetPincerApp.DataContext.Entities.Role", null)
+                    b.HasOne("HotelGuru.DataContext.Entities.Role", null)
                         .WithMany()
                         .HasForeignKey("RolesId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("NetPincerApp.DataContext.Entities.User", null)
+                    b.HasOne("HotelGuru.DataContext.Entities.User", null)
                         .WithMany()
                         .HasForeignKey("UsersId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("NetPincerApp.DataContext.Entities.Order", b =>
+            modelBuilder.Entity("HotelGuru.DataContext.Entities.Order", b =>
                 {
                     b.Navigation("OrderItems");
                 });
 
-            modelBuilder.Entity("NetPincerApp.DataContext.Entities.Restaurant", b =>
+            modelBuilder.Entity("HotelGuru.DataContext.Entities.Restaurant", b =>
                 {
                     b.Navigation("MenuItems");
                 });
 
-            modelBuilder.Entity("NetPincerApp.DataContext.Entities.User", b =>
+            modelBuilder.Entity("HotelGuru.DataContext.Entities.User", b =>
                 {
                     b.Navigation("Address");
                 });

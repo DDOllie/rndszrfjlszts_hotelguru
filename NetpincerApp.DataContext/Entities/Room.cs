@@ -1,4 +1,4 @@
-﻿namespace NetPincerApp.DataContext.Entities
+﻿namespace HotelGuru.DataContext.Entities
 {
     public class Room
     {

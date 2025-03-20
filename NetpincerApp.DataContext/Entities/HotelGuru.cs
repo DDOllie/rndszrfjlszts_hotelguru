@@ -1,11 +1,11 @@
-﻿using NetPincerApp.DataContext.Entities;
+﻿using HotelGuru.DataContext.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NetpincerApp.DataContext.Entities
+namespace HotelGuru.DataContext.Entities
 {
     public class HotelGuru
     {

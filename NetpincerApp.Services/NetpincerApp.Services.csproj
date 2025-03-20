@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\NetpincerApp.DataContext\NetpincerApp.DataContext.csproj" />
+    <ProjectReference Include="..\HotelGuru.DataContext\HotelGuru.DataContext.csproj" />
   </ItemGroup>
 
 </Project>

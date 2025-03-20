@@ -1,4 +1,4 @@
-﻿namespace NetPincerApp.DataContext.Entities
+﻿namespace HotelGuru.DataContext.Entities
 {
     abstract class User
     {
@@ -9,3 +9,4 @@
         public string PhoneNumber { get; set; }
         public int CreditCard { get; set; }
     }
+}

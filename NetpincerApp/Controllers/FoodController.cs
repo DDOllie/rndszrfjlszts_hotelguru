@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using NetpincerApp.Services;
+using HotelGuru.Services;
 
-namespace NetpincerApp.Controllers
+namespace HotelGuru.Controllers
 {
     [ApiController]
     [Route("api/[controller]/[action]")]

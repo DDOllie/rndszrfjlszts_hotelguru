@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace NetpincerApp.DataContext.Migrations
+namespace HotelGuru.DataContext.Migrations
 {
     /// <inheritdoc />
     public partial class Initial : Migration

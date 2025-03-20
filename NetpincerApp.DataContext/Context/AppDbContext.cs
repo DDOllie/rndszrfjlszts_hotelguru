@@ -1,12 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using NetPincerApp.DataContext.Entities;
+using HotelGuru.DataContext.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NetpincerApp.DataContext.Context
+namespace HotelGuru.DataContext.Context
 {
     public class AppDbContext : DbContext
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NetpincerApp.DataContext.Entities
+namespace HotelGuru.DataContext.Entities
 {
     public class Users
     {
